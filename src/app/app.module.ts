@@ -31,9 +31,9 @@ import { SignupComponent } from './view/auth/signup/signup.component';
   ],
   imports: [
     BrowserModule,
+    AdminModule,
     AppRoutingModule,
     HttpClientModule,
-
     ReactiveFormsModule,
     CommonModule
   ],
