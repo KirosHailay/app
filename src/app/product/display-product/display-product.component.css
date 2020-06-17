@@ -1,0 +1,17 @@
+.row{
+    margin-top: 10px;
+}
+.cont{
+padding-left: 5%;
+padding-right: 5%;
+width: 100%;
+margin-top: 3.5em;
+}
+.table-title{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.pre-scrollable {
+    max-height: 500px;
+    overflow-y: scroll;
+}
