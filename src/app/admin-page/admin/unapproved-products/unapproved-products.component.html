@@ -1,0 +1,26 @@
+<div class= " cont">
+<br>
+<h3>Approve Products</h3>
+<hr>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8 bg-white">
+            <h5>Product</h5>
+        </div>
+        <div class="col-4 bg-white">
+        </div>
+    </div>
+    <div class="pre-scrollable ">
+    <div class="row" *ngFor="let product of products">
+        <div class="col-8 bg-light">{{product.title}}</div>
+        <div class="col-4 bg-white">
+            <button type="button" class="btn btn-dark"  [routerLink]="['/admin/view-product',product._id]"  >Details</button>
+            <button type="button" class="btn btn-light" (click)="approveProduct(product)">Approve</button>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+</div>

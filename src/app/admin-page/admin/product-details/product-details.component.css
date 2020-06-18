@@ -1,6 +1,8 @@
 .row{
     text-align: center  ;
   }
+  
+  
   /* Style the Image Used to Trigger the Modal */
   #myImg {
       border-radius: 5px;
@@ -11,4 +13,12 @@
     #myImg:hover {opacity: 0.7;}
     
   
+    .cont{
+      padding-left: 5%;
+      padding-right: 5%;
+      width: 90%;
+      margin:auto;
+      margin-top: 10em;
+      text-align: center;
+      }
   

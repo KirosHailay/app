@@ -14,6 +14,12 @@ import { LoginComponent } from './view/auth/login/login.component';
 import { LandingpageComponent } from './view/home/landingpage/landingpage.component';
 import { JwtInterceptor, ErrorInterceptor } from './helpers';
 import { SignupComponent } from './view/auth/signup/signup.component';
+import { AdminComponent } from './admin-page/admin/admin.component';
+import { HeaderComponent } from './admin-page/admin/header/header.component';
+import { UnapprovedProductsComponent } from './admin-page/admin/unapproved-products/unapproved-products.component';
+import { UnapprovedReviewsComponent } from './admin-page/admin/unapproved-reviews/unapproved-reviews.component';
+import { ProductDetailsComponent } from './admin-page/admin/product-details/product-details.component';
+import { ReviewDetailsComponent } from './admin-page/admin/review-details/review-details.component';
 
 
 @NgModule({
@@ -27,11 +33,15 @@ import { SignupComponent } from './view/auth/signup/signup.component';
     AddProductComponent,
     DisplayProductComponent,
     UpdateProductComponent,
-
+    AdminComponent,
+    HeaderComponent,
+    UnapprovedProductsComponent,
+    UnapprovedReviewsComponent,
+    ProductDetailsComponent,
+    ReviewDetailsComponent,
   ],
   imports: [
     BrowserModule,
-    AdminModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
