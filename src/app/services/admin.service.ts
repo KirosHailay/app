@@ -41,10 +41,6 @@ export class AdminService{
     }
 
 
-    viewReviewDetail(){
-
-    }
-
     getReview(prodId: string, reviewId: string){
         console.log(prodId,"__", reviewId );
         return this.http.get<ApiResponse>(this.baseurl + '/getReview/'+ reviewId+"/"+prodId);

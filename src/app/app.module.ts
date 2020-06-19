@@ -30,6 +30,10 @@ import { UnapprovedProductsComponent } from './admin-page/admin/unapproved-produ
 import { UnapprovedReviewsComponent } from './admin-page/admin/unapproved-reviews/unapproved-reviews.component';
 import { ProductDetailsComponent } from './admin-page/admin/product-details/product-details.component';
 import { ReviewDetailsComponent } from './admin-page/admin/review-details/review-details.component';
+import { BuyerComponent } from './buyer/buyer.component';
+import { ProductListComponent } from './buyer/product-list/product-list.component';
+import { BuyerHeaderComponent } from './buyer/buyer-header/buyer-header.component';
+import { CartComponent } from './buyer/cart/cart.component';
 
 
 @NgModule({
@@ -57,6 +61,10 @@ import { ReviewDetailsComponent } from './admin-page/admin/review-details/review
     UnapprovedReviewsComponent,
     ProductDetailsComponent,
     ReviewDetailsComponent,
+    BuyerComponent,
+    ProductListComponent,
+    BuyerHeaderComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
