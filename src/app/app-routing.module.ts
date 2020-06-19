@@ -12,6 +12,7 @@ import { ProductComponent } from './product/product.component';
 import { OrderDispalyComponent } from './product/order-dispaly/order-dispaly.component';
 import { ChangeOrderComponent } from './product/change-order/change-order.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { ReviewComponent } from './review/review.component';
 
 
 
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path:'orders', component:OrderDispalyComponent},
   {path:'order/:id', component: ChangeOrderComponent}
    ]},
-  {path: 'history' , component: OrderHistoryComponent}
+  {path: 'history' , component: OrderHistoryComponent},
+  {path:'review', component: ReviewComponent}
   
 ];
 

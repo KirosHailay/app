@@ -18,6 +18,7 @@ import { ProductDetailsComponent } from './product/product-details/product-detai
 import { OrderDispalyComponent } from './product/order-dispaly/order-dispaly.component';
 import { ChangeOrderComponent } from './product/change-order/change-order.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
+import { ReviewComponent } from './review/review.component';
 
 
 
@@ -37,6 +38,7 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     OrderDispalyComponent,
     ChangeOrderComponent,
     OrderHistoryComponent,
+    ReviewComponent,
   
   ],
   imports: [

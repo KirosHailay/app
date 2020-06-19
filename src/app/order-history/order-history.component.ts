@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../services/order.service';
 import { Order } from '../model/order';
 import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-history',
@@ -10,7 +11,7 @@ import { first } from 'rxjs/operators';
 })
 export class OrderHistoryComponent implements OnInit {
   orders : Order[];
-  constructor(private orderService :OrderService) { 
+  constructor(private orderService :OrderService, private route:Router) { 
   }
 
   ngOnInit(): void {
@@ -19,5 +20,7 @@ export class OrderHistoryComponent implements OnInit {
       console.log("order is ..." + this.orders)
     })
   }
-
+  goToReview(id:string){
+  this.route.navigate(['review']);
+  }
 }
