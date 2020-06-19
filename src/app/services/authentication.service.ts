@@ -11,7 +11,9 @@ export class AuthenticationService {
    
     private baseurl = "http://localhost:3000/auth";
     constructor(private http: HttpClient) {
+        
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    //   console.log("this is the currrent user : ", this.currentUser.shippingAddress)
       
     }
 

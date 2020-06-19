@@ -1,0 +1,42 @@
+<div class="container">
+    <h1>Check Out</h1>
+      
+    <form [formGroup]="placeOrderForm" (ngSubmit)="submit()">
+        <div class="form-group">
+            <label for="paymentMethod">Select Payment Method:</label>
+            <select formControlName="paymentMethod" class="form-control" (change)="changeWebsite($event)">
+                <option disabled>Choose Payment Method</option>
+                <option *ngFor="let add of billingInfos"[ngValue]="add._id" >{{add.cardInfo.cardHolderName}}, {{add.cardInfo.cardType}}, {{add.cardInfo.exparationDate}} {{add.cardInfo.cardCode}}</option>
+            </select>
+            <div *ngIf="f.paymentMethod.touched && f.paymentMethod.invalid" class="alert alert-danger">
+                <div *ngIf="f.paymentMethod.errors.required">payment is required.</div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="shippingAddress">Select Shipping Address:</label>
+            <select formControlName="shippingAddress" class="form-control" (change)="changeWebsite($event)">
+                <option disabled>Select Shipping Address </option>
+                <option *ngFor="let add of addresss"[ngValue]="add._id" >{{add.country}}, {{add.city}}, {{add.zipAddress}}</option>
+            </select>
+            <div *ngIf="f.shippingAddress.touched && f.shippingAddress.invalid" class="alert alert-danger">
+                <div *ngIf="f.shippingAddress.errors.required">shipping Address is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <p >Do you Want to use you Cupon  </p>
+            <label>
+                <input type="radio" value="yes" formControlName="useCupon">
+                  <span>Yes</span>
+              </label>
+              <label>
+                <input type="radio" value="no" formControlName="useCupon">
+                  <span>  No</span>
+              </label>
+        </div>
+        
+        
+        <button class="btn btn-primary" type="submit" [disabled]="!placeOrderForm.valid">Place Order</button>
+    </form>
+</div>

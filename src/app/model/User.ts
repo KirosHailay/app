@@ -1,5 +1,8 @@
+import { Address } from './Address';
+import { BillingInfo } from './BillingInfo';
+
 export class User {
-  _id: number;
+  _id: string;
   userName: string;
   firstName: string;
   lastName: string;
@@ -8,4 +11,6 @@ export class User {
   role: string;
   token?: string;
   password: string;
+  shippingAddress: any[];
+  billingInfo: any[];
 }

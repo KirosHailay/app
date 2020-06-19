@@ -14,6 +14,12 @@ import { LoginComponent } from './view/auth/login/login.component';
 import { LandingpageComponent } from './view/home/landingpage/landingpage.component';
 import { JwtInterceptor, ErrorInterceptor } from './helpers';
 import { SignupComponent } from './view/auth/signup/signup.component';
+import { AdminModule } from './admin-page/admin.module';
+import { from } from 'rxjs';
+import { OrdersComponent } from './view/orders/orders.component';
+import { AddShippingAddressComponent } from './view/add-shipping-address/add-shipping-address.component';
+import { AddBillingInfoComponent } from './view/add-billing-info/add-billing-info.component';
+import { PlaceOrderComponent } from './view/place-order/place-order.component';
 
 
 @NgModule({
@@ -27,6 +33,10 @@ import { SignupComponent } from './view/auth/signup/signup.component';
     AddProductComponent,
     DisplayProductComponent,
     UpdateProductComponent,
+    OrdersComponent,
+    AddShippingAddressComponent,
+    AddBillingInfoComponent,
+    PlaceOrderComponent,
 
   ],
   imports: [
