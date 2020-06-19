@@ -1,0 +1,15 @@
+body{
+  position: relative;
+  background-color: #fff;
+  width: 750px;
+ 
+}
+
+#sign{
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+  }

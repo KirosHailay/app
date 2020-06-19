@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { User, PlaceOrderPost} from '../model';
+
 import { ApiResponse } from '../util/response';
 
 
@@ -28,12 +29,13 @@ export class OrderService {
     }
 
     // provide put body
-    changeOrderStatus() {
-        return this.http.put<ApiResponse>(this.baseurl + '/change-order-status', {})
+    changeOrderStatus(id,data) {
+        console.log("ORDER STAT", data);
+        return this.http.put<ApiResponse>(this.baseurl + '/change-order-status', {orderId: id, orderStatus: data});
     }
 
-    cancelOrder() {
-        return this.http.put<ApiResponse>(this.baseurl + '/cancel-order', {})
+    cancelOrder(id:string) {
+        return this.http.put<ApiResponse>(this.baseurl + '/cancel-order', {orderId: id})
     }
 
 }

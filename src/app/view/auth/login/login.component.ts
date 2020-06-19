@@ -5,7 +5,9 @@ import { first } from 'rxjs/operators';
 
 import { AuthenticationService } from '../../../services/authentication.service'
 
-@Component({templateUrl: './login.component.html'})
+@Component({
+    selector: 'app-login',
+    templateUrl: './login.component.html'})
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
@@ -21,7 +23,7 @@ export class LoginComponent implements OnInit {
     ) {
        // redirect to home if already logged in
         if (this.authenticationService.getCurrentUser()) { 
-            this.router.navigate(['home']);
+            this.router.navigate(['admin']);
         }
     }
 
@@ -55,8 +57,15 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate(["/home"]);
-                    console.log("RESULT:", data);
+                 if(data.user.role === 'seller'){
+                    this.router.navigate(['seller','display-products']);
+                    }
+                    if(data.user.role === 'buyer'){
+                        this.router.navigate(['history']);
+                        }
+
+                    this.router.navigate(["/admin"]);
+
                 },
                 error => {
                     this.loading = false;
