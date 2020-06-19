@@ -1,0 +1,19 @@
+<div class="container cont">
+    <h2> Cart</h2>  
+    <div class="card" *ngFor="let item of cart.items">
+        <div class="card-body">
+            <h6>{{item.productId.title}}</h6>
+            <p>Price: ${{item.productId.price}}</p>
+            <p>Quantity: {{item.qty}}</p>
+            <br>
+            <hr>
+            <button type="button" class="btn btn-outline-dark" (click)="removeItem(item.productId._id)">Remove</button>
+        </div>
+    <br>
+</div>
+<br>
+<hr>
+<h6>Total Price: {{cart.totalPrice}}</h6>
+<button type="button" class="btn btn-secondary chk">Checkout</button>
+
+</div>

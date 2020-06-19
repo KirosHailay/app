@@ -18,6 +18,10 @@ import { AdminComponent} from './admin-page/admin/admin.component';
 import { UnapprovedProductsComponent } from './admin-page/admin/unapproved-products/unapproved-products.component';
 import { UnapprovedReviewsComponent } from './admin-page/admin/unapproved-reviews/unapproved-reviews.component';
 import { ReviewDetailsComponent } from './admin-page/admin/review-details/review-details.component';
+import { BuyerComponent } from './buyer/buyer.component';
+import{ ProductListComponent} from './buyer/product-list/product-list.component';
+import{ CartComponent} from './buyer/cart/cart.component';
+
 
 const routes: Routes = [
   {path: '' , component: LandingpageComponent},
@@ -42,7 +46,11 @@ const routes: Routes = [
   { path: 'admin/view-product/:id', component: ProductDetailsComponent},
   // { path: 'admin/approve-product', component: UnapprovedProductsComponent},
   { path: 'admin/list-reviews', component: UnapprovedReviewsComponent},
-  {path: 'admin/view-review/:revId/:prodId', component: ReviewDetailsComponent}
+  {path: 'admin/view-review/:revId/:prodId', component: ReviewDetailsComponent},
+  {path: 'buyer/product-list', component: ProductListComponent},
+  {path: 'buyer/cart', component: CartComponent}, 
+
+
 ];
  
 @NgModule({
