@@ -5,6 +5,7 @@ import { AuthenticationService} from '../../services/authentication.service';
 import { from } from 'rxjs';
 import { OrderService } from 'src/app/services/order.service';
 import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-place-order',
   templateUrl: './place-order.component.html',
@@ -20,7 +21,8 @@ export class PlaceOrderComponent implements OnInit {
   changeWebsite(e) {
     console.log(e.target.value);
   }
-  constructor(private authenticationService: AuthenticationService, private orderService: OrderService,  private formBuilder: FormBuilder) { 
+  constructor(private authenticationService: AuthenticationService, private orderService: OrderService,  private formBuilder: FormBuilder,
+    private route: Router) { 
     this.user =  this.authenticationService.getCurrentUser();
     this.addresss  = this.user.user.shippingAddress;
     this.billingInfos = this.user.user.billingInfo;
@@ -50,6 +52,7 @@ export class PlaceOrderComponent implements OnInit {
         if(data.status == 200) {
            console.log('you successfully add an item');
            console.log(data.result)
+          this.route.navigate(['buyer', 'history'])
         }
       })
   }

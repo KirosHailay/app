@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     ) {
        // redirect to home if already logged in
         if (this.authenticationService.getCurrentUser()) { 
-            this.router.navigate(['admin']);
+            //this.router.navigate(['admin/list-products']);
         }
     }
 
@@ -61,10 +61,12 @@ export class LoginComponent implements OnInit {
                     this.router.navigate(['seller','display-products']);
                     }
                     if(data.user.role === 'buyer'){
-                        this.router.navigate(['history']);
+                        this.router.navigate(['buyer/product-list']);
                         }
-
-                    this.router.navigate(["/admin"]);
+                    if(data.user.role === 'admin') {
+                        this.router.navigate(['admin','list-products']);
+                    }
+                    
 
                 },
                 error => {

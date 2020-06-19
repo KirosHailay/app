@@ -7,10 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-                <a class="nav-link">Order History</a>
+                <a class="nav-link" [routerLink]="['/buyer/history']">Order History</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link">Edit Account</a>
+                <a class="nav-link" [routerLink]="['/buyer/billing']">Add Billing Info</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/buyer/shipping']">Add Shipping Address</a>
             </li>
         </ul>
         

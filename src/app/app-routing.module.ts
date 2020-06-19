@@ -21,6 +21,8 @@ import { ReviewDetailsComponent } from './admin-page/admin/review-details/review
 import { BuyerComponent } from './buyer/buyer.component';
 import{ ProductListComponent} from './buyer/product-list/product-list.component';
 import{ CartComponent} from './buyer/cart/cart.component';
+import { AddBillingInfoComponent } from './view/add-billing-info/add-billing-info.component';
+import { AddShippingAddressComponent } from './view/add-shipping-address/add-shipping-address.component';
 
 
 const routes: Routes = [
@@ -36,20 +38,31 @@ const routes: Routes = [
   {path:'orders', component:OrderDispalyComponent},
   {path:'order/:id', component: ChangeOrderComponent}
    ]},
-  {path: 'history' , component: OrderHistoryComponent},
+ 
   { path: 'seller/add-product', component: AddProductComponent },
   { path: 'seller/display-products', component: DisplayProductComponent },
   { path: 'seller/update-products', component: UpdateProductComponent },
   { path: 'orders', component: OrdersComponent},
+  {path: 'buyer' , component:BuyerComponent,
+children:[
   { path: 'place-order', component: PlaceOrderComponent},
-  { path: 'admin/list-products', component: UnapprovedProductsComponent},
-  { path: 'admin/view-product/:id', component: ProductDetailsComponent},
-  // { path: 'admin/approve-product', component: UnapprovedProductsComponent},
-  { path: 'admin/list-reviews', component: UnapprovedReviewsComponent},
-  {path: 'admin/view-review/:revId/:prodId', component: ReviewDetailsComponent},
-  {path: 'buyer/product-list', component: ProductListComponent},
-  {path: 'buyer/cart', component: CartComponent}, 
-
+  {path: 'product-list', component: ProductListComponent},
+  {path: 'product-list', component: ProductListComponent},
+  {path: 'cart', component: CartComponent}, 
+  {path: 'history' , component: OrderHistoryComponent},
+  {path: 'billing' , component: AddBillingInfoComponent},
+  {path: 'shipping' , component: AddShippingAddressComponent}
+]
+},
+  
+ { path: 'admin', component: AdminComponent,
+children:[
+  { path: 'list-products', component: UnapprovedProductsComponent},
+  { path: 'view-product/:id', component: ProductDetailsComponent},
+  { path: 'list-reviews', component: UnapprovedReviewsComponent},
+  {path: 'view-review/:revId/:prodId', component: ReviewDetailsComponent},
+]
+}
 
 ];
  
