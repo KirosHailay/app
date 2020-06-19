@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin.service';
 import { first } from 'rxjs/operators';
-import { Product} from '../../../model';
 import { ActivatedRoute, RouteConfigLoadEnd, Router } from '@angular/router';
+import { Product } from 'src/app/model/Product';
 
 @Component({
   selector: 'admin-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent implements OnInit {
+export class ProductDetailsComponents implements OnInit {
  product: Product;
   private id: string;
   constructor(private adminService: AdminService, private route: ActivatedRoute, private router: Router) {
