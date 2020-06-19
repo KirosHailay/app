@@ -34,22 +34,22 @@
                 <div *ngIf="f.email.errors.required">email is required</div>
             </div>
         </div>
-        <div class="form-group">
-            <label for="role">role</label>
-            <input type="text" formControlName="role" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.role.errors }" />
-            <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
-                <div *ngIf="f.role.errors.required">role is required</div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" formControlName="password" class="form-control"
-                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                <div *ngIf="f.password.errors.required">Password is required</div>
-                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-            </div>
+    </div>
+    <div class="form-group">
+        <label for="role">Select Role</label>
+        <select formControlName="role" class="form-control" id="role">
+          <option>admin</option>
+          <option>buyer</option>
+          <option>seller</option>
+        </select>
+      </div>
+      <label for="password">Password</label>
+      <input type="password" formControlName="password" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+          <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+      </div>
         </div>
         <div class="form-group">
             <button [disabled]="loading" class="btn btn-dark">

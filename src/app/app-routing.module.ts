@@ -7,6 +7,8 @@ import { AuthGuard } from './helpers';
 import { AddProductComponent } from './product/add-product/add-product.component';
 import { DisplayProductComponent } from './product/display-product/display-product.component';
 import { UpdateProductComponent } from './product/update-product/update-product.component';
+import { OrdersComponent} from './view/orders/orders.component';
+import { PlaceOrderComponent} from './view/place-order/place-order.component';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { ProductComponent } from './product/product.component';
 import { OrderDispalyComponent } from './product/order-dispaly/order-dispaly.component';
@@ -35,6 +37,8 @@ const routes: Routes = [
   { path: 'seller/add-product', component: AddProductComponent },
   { path: 'seller/display-products', component: DisplayProductComponent },
   { path: 'seller/update-products', component: UpdateProductComponent },
+  { path: 'orders', component: OrdersComponent},
+  { path: 'place-order', component: PlaceOrderComponent}
   { path: 'admin', component: AdminComponent},
   { path: 'admin/list-products', component: UnapprovedProductsComponent},
   { path: 'admin/view-product/:id', component: ProductDetailsComponent},

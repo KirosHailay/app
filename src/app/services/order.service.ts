@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { User, PlaceOrderPost} from '../model';
 
 import { ApiResponse } from '../util/response';
 
@@ -19,13 +20,13 @@ export class OrderService {
     }
 
     getOrders() {
-        return this.http.get<ApiResponse>(this.baseurl )
+        return this.http.get<ApiResponse>(this.baseurl + '/')
     }
 
     // provide post body
-    // placeOrder(postOrder: PlaceOrderPost) {
-    //     return this.http.post<ApiResponse>(this.baseurl + '/place-order', postOrder);
-    // }
+    placeOrder(postOrder: PlaceOrderPost) {
+        return this.http.post<ApiResponse>(this.baseurl + '/place-order', postOrder);
+    }
 
     // provide put body
     changeOrderStatus(id,data) {
