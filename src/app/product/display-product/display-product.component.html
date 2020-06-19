@@ -1,6 +1,6 @@
 <div class="cont ">
     <br>
-    <h3>Approve Reviews</h3>
+    <h3>Products In Stock</h3>
     <hr>
     <div class="container-fluid">
         <div class="row ">
@@ -18,18 +18,16 @@
             </div>
             <div class="col-sm  bg-dark text-white table-title"></div>
         </div>
-        <div class="pre-scrollable ">
+        <div *ngFor= "let product of products" class="pre-scrollable ">
             <div class="row">
-                <div class="col-sm bg-light">1</div>
-                <div class="col-sm bg-light">BOOK</div>
-                <div class="col-sm bg-light">23$</div>
-                <div class="col-sm bg-light">
-                    <h5>10</h5>
-                </div>
+                <div class="col-sm bg-light" #idValue>{{product._id}}</div>
+                <div class="col-sm bg-light">{{product.title}}</div>
+                <div class="col-sm bg-light">${{product.price}}</div>
+                <div class="col-sm bg-light">{{product.quantity}}</div>
                 <div class="col-sm bg-white">
-                    <button type="button" class="btn btn-light">Display</button>
-                    <button type="button" class="btn btn-dark" (click) = "goUpdateProduct()">Update</button>
-                    <button type="button" class="btn btn-light" (click)="goDeleteProduct()">Delete</button>
+                    <button type="button" class="btn btn-light" (click) = "goDisplayProduct(product._id)">Display</button>
+                    <button type="button" class="btn btn-dark" (click) = "goUpdateProduct(product._id)">Update</button>
+                    <button type="button" class="btn btn-light" (click)="goDeleteProduct(product._id)">Delete</button>
                 </div>
             </div>
         </div>

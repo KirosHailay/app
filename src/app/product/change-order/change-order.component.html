@@ -1,0 +1,14 @@
+<div class="order">
+<form [formGroup]="changeOrders" (ngSubmit)="changeOrder()">
+    <div class="form-group">
+        <label for="role">Select Order Status</label>
+        <select formControlName="status" class="form-control" id="role">
+          <option>Shipped</option>
+          <option>Deliverd</option>
+        </select>
+      </div>
+      <button class="btn btn-dark" >
+       Change Status
+    </button>
+</form>
+</div>

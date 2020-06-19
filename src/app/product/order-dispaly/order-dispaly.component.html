@@ -1,0 +1,36 @@
+<div class="cont ">
+    <br>
+    <h3>Order States</h3>
+    <hr>
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-sm bg-dark text-white table-title">
+                <h5>Id</h5>
+            </div>
+            <div class="col-sm bg-dark text-white table-title">
+                <h5>Order date</h5>
+            </div>
+            <div class="col-sm bg-dark text-white table-title">
+                <h5>Order Status</h5>
+            </div>
+            <div class="col-sm bg-dark text-white table-title">
+                <h5>Total Payment</h5>
+            </div>
+            <div class="col-sm  bg-dark text-white table-title"></div>
+        </div>
+        <div *ngFor= "let order of orders" class="pre-scrollable ">
+            <div class="row">
+                <div class="col-sm bg-light" #idValue>{{order._id}}</div>
+                <div class="col-sm bg-light">{{order.orderPlacedDate}}</div>
+                <div class="col-sm bg-light">{{order.orderStatus}}</div>
+                <div class="col-sm bg-light">{{order.overAllPayment}}</div>
+                <div class="col-sm bg-white">
+                    <button type="button" class="btn btn-dark" (click) = "goCancel(order._id)">Cancel Order</button>
+                    <button type="button" class="btn btn-light" (click)= "goChange(order._id)">Change Status</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

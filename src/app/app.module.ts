@@ -14,6 +14,12 @@ import { LoginComponent } from './view/auth/login/login.component';
 import { LandingpageComponent } from './view/home/landingpage/landingpage.component';
 import { JwtInterceptor, ErrorInterceptor } from './helpers';
 import { SignupComponent } from './view/auth/signup/signup.component';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { OrderDispalyComponent } from './product/order-dispaly/order-dispaly.component';
+import { ChangeOrderComponent } from './product/change-order/change-order.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
+
+
 
 
 @NgModule({
@@ -27,7 +33,11 @@ import { SignupComponent } from './view/auth/signup/signup.component';
     AddProductComponent,
     DisplayProductComponent,
     UpdateProductComponent,
-
+    ProductDetailsComponent,
+    OrderDispalyComponent,
+    ChangeOrderComponent,
+    OrderHistoryComponent,
+  
   ],
   imports: [
     BrowserModule,
