@@ -1,0 +1,44 @@
+<div class="cont ">
+    <br>
+    <h3>Order History</h3>
+    <hr>
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-sm bg-dark text-white table-title">
+                <h5>Product Id</h5>
+            </div>
+            <div class="col-sm bg-dark text-white table-title">
+                <h5>Order date</h5>
+            </div>
+            <div class="col-sm bg-dark text-white table-title">
+                <h5>Shipped Date</h5>
+            </div>
+            <div class="col-sm bg-dark text-white table-title">
+                <h5>Deliverd Date</h5>
+            </div>
+            <div class="col-sm bg-dark text-white table-title">
+                <h5>Cuppon Payment</h5>
+            </div>
+            <div class="col-sm bg-dark text-white table-title">
+                <h5>Total Payment</h5>
+            </div>
+            <div class="col-sm  bg-dark text-white table-title"></div>
+        </div>
+        <div *ngFor= "let order of orders" class="pre-scrollable ">
+            <div class="row">
+                <div class="col-sm bg-light" #idValue>{{order._id}}</div>
+                <div class="col-sm bg-light">{{order.orderPlacedDate}}</div>
+                <div class="col-sm bg-light">{{order.shippedDate}}</div>
+                <div class="col-sm bg-light">{{order.DeliveredDate}}</div>
+                <div class="col-sm bg-light">{{order.cuponPayment}}</div>
+                <div class="col-sm bg-light">{{order.overAllPayment}}</div>
+                <div class="col-sm bg-white">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

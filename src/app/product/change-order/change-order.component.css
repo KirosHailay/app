@@ -1,8 +1,8 @@
-div.products{
+div.order{
     width: 500px;
     height: 300px;
     position: absolute;
     left: 50%;
-    top: 35%;
+    top: 50%;
     transform: translate(-50%, -50%);
   }
