@@ -27,7 +27,7 @@ import { AdminComponent } from './admin-page/admin/admin.component';
 import { HeaderComponent } from './admin-page/admin/header/header.component';
 import { UnapprovedProductsComponent } from './admin-page/admin/unapproved-products/unapproved-products.component';
 import { UnapprovedReviewsComponent } from './admin-page/admin/unapproved-reviews/unapproved-reviews.component';
-import { ProductDetailsComponents } from './admin-page/admin/product-details/product-details.component';
+import { ProductzDetailsComponents } from './admin-page/admin/product-details/productz-details.component';
 import { ReviewDetailsComponent } from './admin-page/admin/review-details/review-details.component';
 import { BuyerComponent } from './buyer/buyer.component';
 import { ProductListComponent } from './buyer/product-list/product-list.component';
@@ -66,6 +66,7 @@ import { ProductsDetailsComponent } from './buyer/product-details/product-detail
     BuyerHeaderComponent,
     CartComponent,
     ProductsDetailsComponent,
+    ProductzDetailsComponents
   ],
   imports: [
     BrowserModule,

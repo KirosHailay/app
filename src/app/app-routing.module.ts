@@ -24,6 +24,7 @@ import{ CartComponent} from './buyer/cart/cart.component';
 import { AddBillingInfoComponent } from './view/add-billing-info/add-billing-info.component';
 import { AddShippingAddressComponent } from './view/add-shipping-address/add-shipping-address.component';
 import { ProductsDetailsComponent } from './buyer/product-details/product-details.component';
+import { ProductzDetailsComponents } from './admin-page/admin/product-details/productz-details.component';
 
 
 const routes: Routes = [
@@ -62,7 +63,7 @@ children:[
  { path: 'admin', component: AdminComponent,
 children:[
   { path: 'list-products', component: UnapprovedProductsComponent},
-  { path: 'view-product/:id', component: ProductDetailsComponent},
+  { path: 'view-product/:id', component: ProductzDetailsComponents},
   { path: 'list-reviews', component: UnapprovedReviewsComponent},
   {path: 'view-review/:revId/:prodId', component: ReviewDetailsComponent},
 ]

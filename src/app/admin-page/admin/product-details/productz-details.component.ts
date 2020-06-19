@@ -6,10 +6,10 @@ import { Product } from 'src/app/model/Product';
 
 @Component({
   selector: 'admin-product-details',
-  templateUrl: './product-details.component.html',
-  styleUrls: ['./product-details.component.css']
+  templateUrl: './productz-details.component.html',
+  styleUrls: ['./productz-details.component.css']
 })
-export class ProductDetailsComponents implements OnInit {
+export class ProductzDetailsComponents implements OnInit {
  product: Product;
   private id: string;
   constructor(private adminService: AdminService, private route: ActivatedRoute, private router: Router) {
