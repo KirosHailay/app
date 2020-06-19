@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/model/product';
+import { ProductService } from 'src/app/services/product.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-update-product',
@@ -8,50 +11,63 @@ import { Router } from '@angular/router';
   styleUrls: ['./update-product.component.css']
 })
 export class UpdateProductComponent implements OnInit {
-  registerForm: FormGroup;
+  updaterForm: FormGroup;
   loading = false;
   submitted = false;
+  id: any;
+  product : Product;
 
 constructor(
   private formBuilder: FormBuilder,
-  private router: Router) { }
+  private router: Router,
+  private route: ActivatedRoute ,
+  private productService: ProductService) { 
+
+    route.params.subscribe( params => { this.id = params['id']});
+    this.productService.getProduct(this.id).pipe(first()).subscribe(data =>{ 
+      console.log("status.....", data.status)
+     this.product = data.result;
+     console.log('image url ', this.product)
+
+     this.updaterForm = this.formBuilder.group({
+      id:[this.product._id, Validators.required],
+      title: [this.product.title, Validators.required],
+      imageURL: [this.product.imageURL, Validators.required],
+      quantity: [this.product.quantity, Validators.required],
+      price: [this.product.price, [Validators.required]],
+      description : [this.product.description, [Validators.required]]
+  });
+  
+    })
+ 
+
+
+  }
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
-        id:['', Validators.required],
-        title: ['', Validators.required],
-        imageUrl: ['', Validators.required],
-        quantity: ['', Validators.required],
-        price: ['', [Validators.required]],
-        description : ['', [Validators.required]]
-    });
+  
+
 }
 
-get f() { return this.registerForm.controls; }
+get f() { return this.updaterForm.controls; }
 
-  onSubmit() {
-      this.submitted = true;
+ 
+updateProduct() {
+  console.log("update form +"+this.updaterForm.value)
+  this.submitted = true;
+        this.productService
+        .updateProduct(this.updaterForm.value)
+        .pipe(first())
+        .subscribe(data => {
+            this.loading = false;
+            console.log(data)
+            this.router.navigate(['seller' , 'display-products']);
+        },
+        error => {
+            this.loading = false;
+        });
 
-      // reset alerts on submit
-      //this.alertService.clear();
-
-      // stop here if form is invalid
-      if (this.registerForm.invalid) {
-          return;
-      }
-
-      this.loading = true;
-      // this.userService.register(this.registerForm.value)
-      //     .pipe(first())
-      //     .subscribe(
-      //         data => {
-      //             this.alertService.success('Registration successful', true);
-      //             this.router.navigate(['/login'], { queryParams: { registered: true }});
-      //         },
-      //         error => {
-      //             this.alertService.error(error);
-      //             this.loading = false;
-      //         });
+    
   }
 
 }

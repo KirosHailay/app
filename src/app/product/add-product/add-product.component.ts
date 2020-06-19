@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProductService } from 'src/app/services/product.service';
+import { Product } from 'src/app/model/product';
 //import { first } from 'rxjs/operators';
 
 @Component({
@@ -10,16 +12,18 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-  registerForm: FormGroup;
+  addProductForm: FormGroup;
     loading = false;
     submitted = false;
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router) { }
+    private router: Router,
+    private productService : ProductService) { }
+
 
     ngOnInit() {
-      this.registerForm = this.formBuilder.group({
+      this.addProductForm = this.formBuilder.group({
           title: ['', Validators.required],
           imageUrl: ['', Validators.required],
           quantity: ['', Validators.required],
@@ -28,31 +32,20 @@ export class AddProductComponent implements OnInit {
       });
   }
 
-  get f() { return this.registerForm.controls; }
+  get f() { return this.addProductForm.controls; }
 
-    onSubmit() {
+  addProduct() {
         this.submitted = true;
-
-        // reset alerts on submit
-        //this.alertService.clear();
-
-        // stop here if form is invalid
-        if (this.registerForm.invalid) {
-            return;
-        }
-
-        this.loading = true;
-        // this.userService.register(this.registerForm.value)
-        //     .pipe(first())
-        //     .subscribe(
-        //         data => {
-        //             this.alertService.success('Registration successful', true);
-        //             this.router.navigate(['/login'], { queryParams: { registered: true }});
-        //         },
-        //         error => {
-        //             this.alertService.error(error);
-        //             this.loading = false;
-        //         });
+        this.productService
+        .addProduct(this.addProductForm.value)
+        .subscribe(data => {
+            this.loading = false;
+            
+            this.router.navigate(['seller' , 'display-products']);
+        },
+        error => {
+            this.loading = false;
+        });
     }
 
 }

@@ -14,6 +14,16 @@ import { LoginComponent } from './view/auth/login/login.component';
 import { LandingpageComponent } from './view/home/landingpage/landingpage.component';
 import { JwtInterceptor, ErrorInterceptor } from './helpers';
 import { SignupComponent } from './view/auth/signup/signup.component';
+import { AdminModule } from './admin-page/admin.module';
+import { from } from 'rxjs';
+import { OrdersComponent } from './view/orders/orders.component';
+import { AddShippingAddressComponent } from './view/add-shipping-address/add-shipping-address.component';
+import { AddBillingInfoComponent } from './view/add-billing-info/add-billing-info.component';
+import { PlaceOrderComponent } from './view/place-order/place-order.component';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { OrderDispalyComponent } from './product/order-dispaly/order-dispaly.component';
+import { ChangeOrderComponent } from './product/change-order/change-order.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 import { AdminComponent } from './admin-page/admin/admin.component';
 import { HeaderComponent } from './admin-page/admin/header/header.component';
 import { UnapprovedProductsComponent } from './admin-page/admin/unapproved-products/unapproved-products.component';
@@ -37,6 +47,14 @@ import { CartComponent } from './buyer/cart/cart.component';
     AddProductComponent,
     DisplayProductComponent,
     UpdateProductComponent,
+    OrdersComponent,
+    AddShippingAddressComponent,
+    AddBillingInfoComponent,
+    PlaceOrderComponent,
+    ProductDetailsComponent,
+    OrderDispalyComponent,
+    ChangeOrderComponent,
+    OrderHistoryComponent,
     AdminComponent,
     HeaderComponent,
     UnapprovedProductsComponent,
