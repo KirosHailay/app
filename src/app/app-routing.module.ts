@@ -23,6 +23,7 @@ import{ ProductListComponent} from './buyer/product-list/product-list.component'
 import{ CartComponent} from './buyer/cart/cart.component';
 import { AddBillingInfoComponent } from './view/add-billing-info/add-billing-info.component';
 import { AddShippingAddressComponent } from './view/add-shipping-address/add-shipping-address.component';
+import { ProductsDetailsComponent } from './buyer/product-details/product-details.component';
 
 
 const routes: Routes = [
@@ -47,11 +48,14 @@ const routes: Routes = [
 children:[
   { path: 'place-order', component: PlaceOrderComponent},
   {path: 'product-list', component: ProductListComponent},
-  {path: 'product-list', component: ProductListComponent},
+ // {path: 'product-list', component: ProductListComponent},
   {path: 'cart', component: CartComponent}, 
   {path: 'history' , component: OrderHistoryComponent},
   {path: 'billing' , component: AddBillingInfoComponent},
-  {path: 'shipping' , component: AddShippingAddressComponent}
+  {path: 'shipping' , component: AddShippingAddressComponent},
+  {path: 'display/:id' , component: ProductsDetailsComponent}
+  
+
 ]
 },
   

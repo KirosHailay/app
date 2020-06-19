@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
 import { from } from 'rxjs';
-import { Cart, Product, CartItem } from 'src/app/model';
+import { Product } from 'src/app/model';
+
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { Cart } from 'src/app/model/Cart';
 
 @Component({
   selector: 'buyer-cart',
@@ -16,8 +18,7 @@ export class CartComponent implements OnInit {
 
   }
   cart: Cart;
-  cartItems: CartItem[];
-  ite: CartItem;
+  // cartItems: CartItem[ 
   ngOnInit(): void {
     this.getCart();
   }
@@ -56,8 +57,6 @@ export class CartComponent implements OnInit {
     })
   }
 
-  placeOrder() {
-    this.router.navigate(['buyer','place-order']);
-  }
+
 
 }

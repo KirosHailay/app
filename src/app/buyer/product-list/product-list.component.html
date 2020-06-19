@@ -10,7 +10,7 @@
                     <p class="card-text">{{product.description}}
                     </p>
                     <p><strong>$ {{product.price}}</strong></p>
-                    <a  class="btn btn-light  active" role="button" >Details</a>
+                    <a  class="btn btn-light  active" role="button" (click) = "goToDisplay(product._id)">Details</a>
                     <a  class="btn btn-secondary  active" role="button" (click)="addToCart(product._id)">Cart</a>
                 </div>
             </div>
