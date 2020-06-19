@@ -18,8 +18,12 @@ import { ProductDetailsComponent } from './product/product-details/product-detai
 import { OrderDispalyComponent } from './product/order-dispaly/order-dispaly.component';
 import { ChangeOrderComponent } from './product/change-order/change-order.component';
 import { OrderHistoryComponent } from './order-history/order-history.component';
-
-
+import { AdminComponent } from './admin-page/admin/admin.component';
+import { HeaderComponent } from './admin-page/admin/header/header.component';
+import { UnapprovedProductsComponent } from './admin-page/admin/unapproved-products/unapproved-products.component';
+import { UnapprovedReviewsComponent } from './admin-page/admin/unapproved-reviews/unapproved-reviews.component';
+import { ProductDetailsComponent } from './admin-page/admin/product-details/product-details.component';
+import { ReviewDetailsComponent } from './admin-page/admin/review-details/review-details.component';
 
 
 @NgModule({
@@ -37,13 +41,17 @@ import { OrderHistoryComponent } from './order-history/order-history.component';
     OrderDispalyComponent,
     ChangeOrderComponent,
     OrderHistoryComponent,
-  
+    AdminComponent,
+    HeaderComponent,
+    UnapprovedProductsComponent,
+    UnapprovedReviewsComponent,
+    ProductDetailsComponent,
+    ReviewDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
     ReactiveFormsModule,
     CommonModule
   ],

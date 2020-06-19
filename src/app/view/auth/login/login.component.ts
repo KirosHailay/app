@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     ) {
        // redirect to home if already logged in
         if (this.authenticationService.getCurrentUser()) { 
-            this.router.navigate(['home']);
+            this.router.navigate(['admin']);
         }
     }
 
@@ -63,7 +63,9 @@ export class LoginComponent implements OnInit {
                     if(data.user.role === 'buyer'){
                         this.router.navigate(['history']);
                         }
-                        
+
+                    this.router.navigate(["/admin"]);
+
                 },
                 error => {
                     this.loading = false;
