@@ -12,9 +12,9 @@ import { UnapprovedProductsComponent } from './admin-page/admin/unapproved-produ
 import { ProductDetailsComponent } from './admin-page/admin/product-details/product-details.component';
 import { UnapprovedReviewsComponent } from './admin-page/admin/unapproved-reviews/unapproved-reviews.component';
 import { ReviewDetailsComponent } from './admin-page/admin/review-details/review-details.component';
-import { BuyerComponent } from './buyer/buyer.component';
 import{ ProductListComponent} from './buyer/product-list/product-list.component';
 import{ CartComponent} from './buyer/cart/cart.component';
+import{ BuyerProdDetailComponent} from './buyer/buyer-prod-detail/buyer-prod-detail.component'
 
 
 
@@ -33,8 +33,8 @@ const routes: Routes = [
   { path: 'admin/list-reviews', component: UnapprovedReviewsComponent},
   {path: 'admin/view-review/:revId/:prodId', component: ReviewDetailsComponent},
   {path: 'buyer/product-list', component: ProductListComponent},
-  {path: 'buyer/cart', component: CartComponent}, 
-
+  {path: 'buyer/cart', component: CartComponent},
+  {path: 'buyer/prodDetails', component: BuyerProdDetailComponent}
 
 ];
  

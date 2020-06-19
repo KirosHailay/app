@@ -3,6 +3,9 @@ import { BuyerService } from 'src/app/services/buyer.service';
 import { Product } from 'src/app/model';
 import { first } from 'rxjs/operators';
 import { CartService } from 'src/app/services/cart.service';
+import { Router, ActivatedRoute } from '@angular/router';
+
+
 @Component({
   selector: 'buyer-product-list',
   templateUrl: './product-list.component.html',
@@ -10,7 +13,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductListComponent implements OnInit {
   products: Product[];
-  constructor(private buyerService: BuyerService, private cartService: CartService) { }
+  constructor(private buyerService: BuyerService, private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
     this.getProds();
@@ -35,5 +38,9 @@ export class ProductListComponent implements OnInit {
       window.alert("You have successfully added item to cart");
       this.cartService.getCart();
       })
+  }
+
+  goToDetail(){
+    this.router.navigate(['buyer/prodDetails']);
   }
 }

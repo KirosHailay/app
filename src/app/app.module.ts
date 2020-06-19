@@ -24,6 +24,7 @@ import { BuyerComponent } from './buyer/buyer.component';
 import { ProductListComponent } from './buyer/product-list/product-list.component';
 import { BuyerHeaderComponent } from './buyer/buyer-header/buyer-header.component';
 import { CartComponent } from './buyer/cart/cart.component';
+import { BuyerProdDetailComponent } from './buyer/buyer-prod-detail/buyer-prod-detail.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { CartComponent } from './buyer/cart/cart.component';
     ProductListComponent,
     BuyerHeaderComponent,
     CartComponent,
+    BuyerProdDetailComponent,
   ],
   imports: [
     BrowserModule,
